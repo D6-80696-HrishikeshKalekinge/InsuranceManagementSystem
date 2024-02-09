@@ -1,0 +1,5 @@
+package com.app.entities.users;
+
+public enum UserRole {
+
+}

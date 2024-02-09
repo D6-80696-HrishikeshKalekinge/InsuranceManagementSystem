@@ -1,0 +1,31 @@
+package com.app.entities.users;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "policy_provider_table")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class PolicyProvider extends User{
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<PolicyReferences> PolicyReferences;
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Policy> PolicyReferences;
+
+}

@@ -1,0 +1,49 @@
+package com.app.entities.users;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "user_table")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable = false)
+	private Integer userId;
+
+	@Column(length = 20, nullable = false)
+	private String name;
+
+	@Enumerated(EnumType.STRING)
+	@Column(length = 5, nullable = false)
+	private Gender gender;
+	
+	@Column(length = 20, nullable = false)
+	private String email;
+	
+	@Column(length = 20, nullable = false)
+	private String password;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(length = 10, nullable = false)
+	private UserRole role;
+
+
+	
+}

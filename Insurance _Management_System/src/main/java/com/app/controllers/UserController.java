@@ -38,4 +38,10 @@ public class UserController {
 	public ResponseEntity<?> registerUser(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
 		return ResponseEntity.status(HttpStatus.OK).body(userService.registerUser(userRegisterDTO));
 	}
+	
+//	@GetMapping("path")
+//	public SomeData getPersonalDetails() {
+//		return new SomeData();
+//	}
+	
 }

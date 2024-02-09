@@ -1,0 +1,5 @@
+package com.app.entities.clients;
+
+public enum UserRole {
+	CLIENT, POLICY_PROVIDER, ADMIN;
+}

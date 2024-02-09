@@ -7,10 +7,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
-import com.app.entities.users.City;
-import com.app.entities.users.Gender;
-import com.app.entities.users.MaritalStatus;
-import com.app.entities.users.States;
+import com.app.entities.clients.City;
+import com.app.entities.clients.Gender;
+import com.app.entities.clients.MaritalStatus;
+import com.app.entities.clients.States;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

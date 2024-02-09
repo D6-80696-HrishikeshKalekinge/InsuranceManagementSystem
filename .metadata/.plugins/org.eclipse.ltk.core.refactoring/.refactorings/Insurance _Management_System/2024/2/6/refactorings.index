@@ -2,3 +2,9 @@
 1707161870111	Encapsulate field 'userLoginDTO'
 1707228735949	Copy compilation unit
 1707293801324	Delete element
+1707451779533	Rename type 'User'
+1707451830774	Copy compilation unit
+1707453112750	Copy compilation unit
+1707453788870	Rename type 'PolicyReferences'
+1707454382833	Rename package 'com.app.entities.users'
+1707454557598	Move compilation unit

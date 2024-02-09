@@ -1,0 +1,6 @@
+package com.app.entities.users;
+
+public class PolicyReference {
+
+	private String policyType;
+}

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.app.daos.UserDao;
 import com.app.entities.DTO.UserLoginDTO;
 import com.app.entities.DTO.UserRegisterDTO;
-import com.app.entities.users.User;
+import com.app.entities.clients.Client;
 
 @Transactional
 @Service
@@ -26,23 +26,23 @@ public class UserServiceImpl implements UserService {
 	private String token = "x";
 
 	@Override
-	public List<User> getAllUser() {
+	public List<Client> getAllUser() {
 		return userDoa.findAll();
 	}
 
 	@Override
 	public String loginUser(UserLoginDTO userLoginDTO) {
-		User user = userDoa.findByEmailAndPassword(userLoginDTO.getEmail(), userLoginDTO.getPassword());
-		System.err.println(user);
+		Client client = userDoa.findByEmailAndPassword(userLoginDTO.getEmail(), userLoginDTO.getPassword());
+		System.err.println(client);
 		
-		return user != null ? "token : " + token : "registration failed!";
+		return client != null ? "token : " + token : "registration failed!";
 	}
 
 	@Override
 	public boolean registerUser(UserRegisterDTO userRegisterDTO) {
 		if(userDoa.findByEmail(userRegisterDTO.getEmail()) == null){
-			User user = mapper.map(userRegisterDTO, User.class);
-			userDoa.save(user);
+			Client client = mapper.map(userRegisterDTO, Client.class);
+			userDoa.save(client);
 			return true;
 		}
 		else return false;

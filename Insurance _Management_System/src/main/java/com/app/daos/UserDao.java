@@ -3,13 +3,13 @@ package com.app.daos;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.app.entities.users.User;
+import com.app.entities.clients.Client;
 
 @Repository
-public interface UserDao extends JpaRepository<User, Integer>{
+public interface UserDao extends JpaRepository<Client, Integer>{
 
-	User findByEmailAndPassword(String email, String password);
+	Client findByEmailAndPassword(String email, String password);
 
-	User findByEmail(String email);
+	Client findByEmail(String email);
 
 }
