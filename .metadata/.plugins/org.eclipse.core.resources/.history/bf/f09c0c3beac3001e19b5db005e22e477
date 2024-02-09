@@ -1,0 +1,37 @@
+package com.app.entities;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "personal_details_table")
+public class PersonalDetails {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	private Integer personalDetailsId;
+	
+	private String name;
+	
+	@Enumerated(EnumType.STRING)
+	private Gender gender;
+	
+	private Date dob;
+	
+	private Integer AnnualIncome;
+	
+	private MaritalStatus maritalStatus;
+	
+	private States state;
+	
+	private City city;
+	
+	
+}

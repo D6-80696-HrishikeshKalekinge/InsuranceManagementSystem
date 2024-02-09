@@ -1,0 +1,327 @@
+-- Insert data into states_table
+INSERT INTO states_table (state_name) VALUES
+('Andhra Pradesh'),
+('Arunachal Pradesh'),
+('Assam'),
+('Bihar'),
+('Chhattisgarh'),
+('Goa'),
+('Gujarat'),
+('Haryana'),
+('Himachal Pradesh'),
+('Jharkhand'),
+('Karnataka'),
+('Kerala'),
+('Madhya Pradesh'),
+('Maharashtra'),
+('Manipur'),
+('Meghalaya'),
+('Mizoram'),
+('Nagaland'),
+('Odisha'),
+('Punjab'),
+('Rajasthan'),
+('Sikkim'),
+('Tamil Nadu'),
+('Telangana'),
+('Tripura'),
+('Uttar Pradesh'),
+('Uttarakhand'),
+('West Bengal'),
+('Andaman and Nicobar Islands'),
+('Chandigarh'),
+('Dadra and Nagar Haveli and Daman and Diu'),
+('Delhi'),
+('Lakshadweep'),
+('Puducherry');
+
+
+-- Insert cities for Andhra Pradesh (state_id = 1)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Vijayawada', 1),
+('Visakhapatnam', 1),
+('Tirupati', 1),
+('Guntur', 1),
+('Nellore', 1),
+('Kurnool', 1),
+('Rajahmundry', 1),
+('Kakinada', 1);
+
+-- Insert cities for Arunachal Pradesh (state_id = 2)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Itanagar', 2),
+('Naharlagun', 2),
+('Tawang', 2),
+('Bomdila', 2),
+('Pasighat', 2),
+('Ziro', 2),
+('Aalo', 2);
+
+-- Insert cities for Assam (state_id = 3)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Guwahati', 3),
+('Dibrugarh', 3),
+('Silchar', 3),
+('Jorhat', 3),
+('Nagaon', 3),
+('Tezpur', 3),
+('Tinsukia', 3);
+
+-- Insert cities for Bihar (state_id = 4)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Patna', 4),
+('Gaya', 4),
+('Bhagalpur', 4),
+('Muzaffarpur', 4),
+('Purnia', 4),
+('Darbhanga', 4),
+('Arrah', 4);
+
+-- Insert cities for Chhattisgarh (state_id = 5)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Raipur', 5),
+('Bhilai', 5),
+('Bilaspur', 5),
+('Korba', 5),
+('Durg', 5),
+('Rajnandgaon', 5);
+
+-- Insert cities for Goa (state_id = 6)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Panaji', 6),
+('Margao', 6),
+('Vasco da Gama', 6),
+('Mapusa', 6);
+
+-- Insert cities for Gujarat (state_id = 7)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Ahmedabad', 7),
+('Surat', 7),
+('Vadodara', 7),
+('Rajkot', 7),
+('Bhavnagar', 7),
+('Jamnagar', 7),
+('Junagadh', 7);
+
+-- Insert cities for Haryana (state_id = 8)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Chandigarh', 8),
+('Faridabad', 8),
+('Gurugram', 8),
+('Hisar', 8),
+('Panipat', 8),
+('Ambala', 8);
+
+-- Insert cities for Himachal Pradesh (state_id = 9)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Shimla', 9),
+('Mandi', 9),
+('Solan', 9),
+('Dharamshala', 9),
+('Kullu', 9);
+
+-- Insert cities for Jharkhand (state_id = 10)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Ranchi', 10),
+('Jamshedpur', 10),
+('Dhanbad', 10),
+('Bokaro', 10),
+('Hazaribagh', 10);
+
+-- Insert cities for Karnataka (state_id = 11)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Bengaluru', 11),
+('Mysuru', 11),
+('Hubballi', 11),
+('Mangaluru', 11),
+('Belagavi', 11),
+('Davanagere', 11),
+('Ballari', 11);
+
+-- Insert cities for Kerala (state_id = 12)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Thiruvananthapuram', 12),
+('Kochi', 12),
+('Kozhikode', 12),
+('Thrissur', 12),
+('Kollam', 12),
+('Palakkad', 12),
+('Kannur', 12);
+
+-- Insert cities for Madhya Pradesh (state_id = 13)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Bhopal', 13),
+('Indore', 13),
+('Jabalpur', 13),
+('Gwalior', 13),
+('Ujjain', 13),
+('Sagar', 13),
+('Dewas', 13);
+
+-- Insert cities for Maharashtra (state_id = 14)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Mumbai', 14),
+('Pune', 14),
+('Nagpur', 14),
+('Thane', 14),
+('Nashik', 14),
+('Aurangabad', 14),
+('Solapur', 14);
+
+-- Insert cities for Manipur (state_id = 15)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Imphal', 15),
+('Thoubal', 15),
+('Bishnupur', 15),
+('Churachandpur', 15);
+
+-- Insert cities for Meghalaya (state_id = 16)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Shillong', 16),
+('Tura', 16),
+('Jowai', 16);
+
+-- Insert cities for Mizoram (state_id = 17)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Aizawl', 17),
+('Lunglei', 17),
+('Champhai', 17);
+
+-- Insert cities for Nagaland (state_id = 18)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Kohima', 18),
+('Dimapur', 18),
+('Mokokchung', 18);
+
+-- Insert cities for Odisha (state_id = 19)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Bhubaneswar', 19),
+('Cuttack', 19),
+('Rourkela', 19),
+('Sambalpur', 19),
+('Puri', 19),
+('Balasore', 19);
+
+-- Insert cities for Punjab (state_id = 20)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Chandigarh', 20),
+('Ludhiana', 20),
+('Amritsar', 20),
+('Jalandhar', 20),
+('Patiala', 20),
+('Bathinda', 20);
+
+-- Insert cities for Rajasthan (state_id = 21)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Jaipur', 21),
+('Jodhpur', 21),
+('Udaipur', 21),
+('Kota', 21),
+('Bikaner', 21),
+('Ajmer', 21),
+('Alwar', 21);
+
+-- Insert cities for Sikkim (state_id = 22)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Gangtok', 22),
+('Namchi', 22),
+('Mangan', 22);
+
+-- Insert cities for Tamil Nadu (state_id = 23)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Chennai', 23),
+('Coimbatore', 23),
+('Madurai', 23),
+('Trichy', 23),
+('Salem', 23),
+('Tirunelveli', 23),
+('Vellore', 23);
+
+-- Insert cities for Telangana (state_id = 24)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Hyderabad', 24),
+('Warangal', 24),
+('Nizamabad', 24),
+('Karimnagar', 24),
+('Khammam', 24),
+('Ramagundam', 24);
+
+-- Insert cities for Tripura (state_id = 25)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Agartala', 25),
+('Udaipur', 25),
+('Dharmanagar', 25);
+
+-- Insert cities for Uttar Pradesh (state_id = 26)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Lucknow', 26),
+('Kanpur', 26),
+('Agra', 26),
+('Varanasi', 26),
+('Meerut', 26),
+('Allahabad', 26),
+('Ghaziabad', 26);
+
+-- Insert cities for Uttarakhand (state_id = 27)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Dehradun', 27),
+('Haridwar', 27),
+('Rishikesh', 27),
+('Nainital', 27);
+
+-- Insert cities for West Bengal (state_id = 28)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Kolkata', 28),
+('Howrah', 28),
+('Durgapur', 28),
+('Asansol', 28),
+('Siliguri', 28),
+('Darjeeling', 28);
+
+-- Insert cities for Andaman and Nicobar Islands (state_id = 29)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Port Blair', 29),
+('Diglipur', 29),
+('Mayabunder', 29);
+
+-- Insert cities for Chandigarh (state_id = 30)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Chandigarh', 30);
+
+-- Insert cities for Dadra and Nagar Haveli and Daman and Diu (state_id = 31)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Daman', 31),
+('Diu', 31),
+('Dadra', 31);
+
+-- Insert cities for Delhi (state_id = 32)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('New Delhi', 32),
+('Old Delhi', 32),
+('Noida', 32),
+('Gurgaon', 32);
+
+-- Insert cities for Lakshadweep (state_id = 33)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Kavaratti', 33),
+('Agatti', 33),
+('Amini', 33);
+
+
+-- Insert cities for Puducherry (state_id = 34)
+INSERT INTO city_table (city_name, state_state_id) VALUES
+('Puducherry', 34),
+('Karaikal', 34),
+('Mahe', 34),
+('Yanam', 34);
+
+-- Add more cities as needed...
+
+-- Insert 5 dummy records into user_table with Indian names
+INSERT INTO user_table (annual_income, dob, email, gender, marital_status, name, password, city_city_id, state_state_id) VALUES
+(50000, '1990-01-01', 'rahul@example.com', 'Male', 'Single', 'Rahul Sharma', 'Rahul123', 1, 1),
+(60000, '1985-05-15', 'priya@example.com', 'Female', 'Married', 'Priya Verma', 'Priya123', 2, 2),
+(70000, '1982-09-30', 'amit@example.com', 'Male', 'Single', 'Amit Patel', 'Amit123', 3, 3),
+(55000, '1995-03-22', 'neha@example.com', 'Female', 'Single', 'Neha Kapoor', 'Neha123', 4, 4),
+(80000, '1978-11-10', 'sandeep@example.com', 'Male', 'Married', 'Sandeep Singh', 'Sandeep123', 5, 5);
+

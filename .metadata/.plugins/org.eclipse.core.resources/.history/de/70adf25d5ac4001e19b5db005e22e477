@@ -1,0 +1,13 @@
+package com.app.services;
+
+import java.util.List;
+
+import com.app.entities.users.User;
+
+public interface UserService {
+
+	List<User> getAllUser();
+
+	boolean loginUser();
+
+}

@@ -1,0 +1,21 @@
+package com.app.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "assets_details_table")
+public class AssetsDetails {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer assetDetailsId;
+	
+	private Home Home; // to be added
+	
+	private Vehicle Vehicle; // to be added;
+	
+}
