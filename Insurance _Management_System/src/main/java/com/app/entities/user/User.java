@@ -25,10 +25,10 @@ public class User {
 	@Column(nullable = false)
 	private Integer userId;
 
-	@Column(length = 20, nullable = false)
+	@Column(length = 30, nullable = false)
 	private String name;
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 40, nullable = false)
 	private String email;
 	
 	@Column(length = 20, nullable = false)

@@ -1,0 +1,17 @@
+package com.app.entities.policies;
+
+import java.sql.Date;
+import java.util.List;
+
+import javax.persistence.Entity;
+
+@Entity
+
+public class CarInsurance extends Insurances {
+	
+	private String carNo;
+	
+	private String carType;
+	
+	private Date startDate;
+}

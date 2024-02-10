@@ -1,0 +1,30 @@
+package com.app.entities.policies;
+
+import java.sql.Date;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.app.entities.clients.AssetsDetails;
+import com.app.entities.clients.City;
+import com.app.entities.clients.ContactDetails;
+import com.app.entities.clients.FamilyDetails;
+import com.app.entities.clients.Gender;
+import com.app.entities.clients.MaritalStatus;
+import com.app.entities.clients.States;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "health_insurance_table")
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
+public class HealthInsurance extends Insurances {
+	private List<String> diseases;
+}

@@ -1,0 +1,8 @@
+package com.app.entities.policies;
+
+import java.util.List;
+
+public class CarInsurance extends Insurances {
+	
+	private String carNo;
+}

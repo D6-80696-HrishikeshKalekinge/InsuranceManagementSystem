@@ -1,0 +1,8 @@
+package com.app.entities.policies;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Insurances {
+	
+}

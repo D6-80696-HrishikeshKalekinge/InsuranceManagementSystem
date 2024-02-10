@@ -1,0 +1,26 @@
+package com.app.entities.policies;
+
+import java.sql.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.MappedSuperclass;
+
+import com.app.entities.policyproviders.PolicyProvider;
+
+@MappedSuperclass
+public class Insurances {
+	@Id
+	private Integer insuranceId;
+	
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "insurance")
+	private PolicyProvider policyprovider;
+	
+	private Date startDate;
+	
+	private int premium;
+	
+	private int period = 12;
+}

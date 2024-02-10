@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.entities.DTO.UserLoginDTO;
 import com.app.entities.DTO.UserRegisterDTO;
 import com.app.services.UserService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController("/user")
 @CrossOrigin(origins = "http://localhost:3000")
@@ -30,7 +32,7 @@ public class UserController {
 	}
 
 	@PostMapping("/login")
-	public ResponseEntity<?> loginUser(@RequestBody UserLoginDTO userLoginDTO) {
+	public ResponseEntity<?> loginUser(@Valid @RequestBody UserLoginDTO userLoginDTO) {
 		return ResponseEntity.status(HttpStatus.OK).body(userService.loginUser(userLoginDTO));
 	}
 
@@ -39,9 +41,6 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.OK).body(userService.registerUser(userRegisterDTO));
 	}
 	
-//	@GetMapping("path")
-//	public SomeData getPersonalDetails() {
-//		return new SomeData();
-//	}
+	
 	
 }

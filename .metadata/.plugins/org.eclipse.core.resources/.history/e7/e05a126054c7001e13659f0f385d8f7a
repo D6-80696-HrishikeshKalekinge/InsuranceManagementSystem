@@ -1,0 +1,23 @@
+package com.app.entities.policies;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+import com.app.entities.policyproviders.PolicyProvider;
+
+public class Insurances {
+	@Id
+	private Integer insuranceId;
+	
+	@ManyToMany
+	private PolicyProvider policyprovider;
+	
+	private Date startDate;
+	
+	private int premium;
+	
+	private int period = 12;
+}

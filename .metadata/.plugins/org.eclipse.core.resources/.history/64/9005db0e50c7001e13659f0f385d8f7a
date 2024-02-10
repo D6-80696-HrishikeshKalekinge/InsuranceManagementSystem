@@ -1,0 +1,10 @@
+package com.app.entities.policies;
+
+import javax.persistence.Entity;
+
+import com.app.entities.policyproviders.PolicyProvider;
+
+@Entity
+public class Insurances {
+	private PolicyProvider policyprovider;
+}

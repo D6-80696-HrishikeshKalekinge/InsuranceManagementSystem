@@ -1,0 +1,7 @@
+package com.app.entities.policies;
+
+import java.util.List;
+
+public class HealthInsurance extends Insurances {
+	private List<String> diseases;
+}

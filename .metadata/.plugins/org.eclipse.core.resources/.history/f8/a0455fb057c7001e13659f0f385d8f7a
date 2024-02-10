@@ -1,0 +1,32 @@
+package com.app.entities.policies;
+
+import java.sql.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
+
+import org.hibernate.annotations.GeneratorType;
+
+import com.app.entities.policyproviders.PolicyProvider;
+
+@MappedSuperclass
+public class Insurances {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer insuranceId;
+	
+	@ManyToOne(cascade = CascadeType.ALL, mappedBy = "insurances")
+	private PolicyProvider policyprovider;
+	
+	private Date startDate;
+	
+	private int premium;
+	
+	private int period = 12;
+}

@@ -1,0 +1,18 @@
+package com.app.entities.policies;
+
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+
+import com.app.entities.policyproviders.PolicyProvider;
+
+@Entity
+public class Insurances {
+	@ManyToMany()
+	private PolicyProvider policyprovider;
+	
+	private Date startDate;
+	
+	private int premium;
+	
+	private Date period;
+}

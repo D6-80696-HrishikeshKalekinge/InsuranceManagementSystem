@@ -1,0 +1,10 @@
+package com.app.entities.policies;
+
+@Entity
+public class Policy {
+	@Id
+	private Integer policyId;
+	
+	private Insurances insuranceType;
+
+}

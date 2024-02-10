@@ -1,6 +1,7 @@
 package com.app.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -8,10 +9,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.daos.PolicyDao;
 import com.app.daos.UserDao;
 import com.app.entities.DTO.UserLoginDTO;
 import com.app.entities.DTO.UserRegisterDTO;
 import com.app.entities.clients.Client;
+import com.app.entities.policies.Policy;
 
 @Transactional
 @Service
@@ -19,6 +22,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDao userDoa;
+	
+	@Autowired
+	private PolicyDao policyDao;
 	
 	@Autowired
 	private ModelMapper mapper;
@@ -47,4 +53,6 @@ public class UserServiceImpl implements UserService {
 		}
 		else return false;
 	}
+
+	
 }

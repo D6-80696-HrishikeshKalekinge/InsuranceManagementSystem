@@ -1,0 +1,14 @@
+package com.app.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.services.PolicyService;
+
+@RestController
+public class PolicyController {
+	
+	@Autowired
+	private PolicyService policyService;
+
+}
