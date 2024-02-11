@@ -20,10 +20,10 @@ import lombok.Setter;
 @Getter
 public class CarInsurance extends Insurances {
 	
-	private String carNo;
+	private String carRegNo;
 	
 	private String carType;
 	
-	private Date registrationDate;
+	private Date regDate;
 	
 }

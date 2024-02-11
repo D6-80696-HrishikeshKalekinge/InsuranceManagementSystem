@@ -1,0 +1,19 @@
+package com.app.controllers;
+
+public class CarController {
+
+	/*
+	 * http://localhost:3000/car-form
+		POST
+		Car Registration number 
+			type="text"
+			name="carRegNo"
+		Car Type
+			type="text"
+			name="carType"
+		Registration Date
+			type="date"
+			name="regDate
+	*
+	*/
+}

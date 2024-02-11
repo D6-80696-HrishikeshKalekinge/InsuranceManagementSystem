@@ -1,0 +1,29 @@
+package com.app.services;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.daos.PolicyDao;
+import com.app.daos.UserDao;
+import com.app.entities.policies.Policy;
+
+@Service
+@Transactional
+public class PolicyServiceImpl implements PolicyService{
+
+	@Autowired
+	private PolicyDao policyDao;
+	
+	@Autowired
+	private UserDao userDao;
+	
+	@Override
+	public List<Policy> getAllPoliciesOfUser(int clientId) {
+		client = userDao.findById(clientId);
+		return policyDao.findByClient(clientId);
+	}
+}

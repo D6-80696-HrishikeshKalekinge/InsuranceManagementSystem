@@ -1,0 +1,18 @@
+package com.app.entities.DTO;
+
+public class CarInsuranceDTO {
+
+}
+
+
+/*
+ * Car Registration number 
+	type="text"
+	name="carRegNo"
+	Car Type
+		type="text"
+		name="carType"
+	Registration Date
+		type="date"
+		name="regDate
+*/

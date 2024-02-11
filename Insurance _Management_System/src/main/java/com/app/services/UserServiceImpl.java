@@ -15,6 +15,7 @@ import com.app.entities.DTO.UserLoginDTO;
 import com.app.entities.DTO.UserRegisterDTO;
 import com.app.entities.clients.Client;
 import com.app.entities.policies.Policy;
+import com.app.entities.user.User;
 
 @Transactional
 @Service

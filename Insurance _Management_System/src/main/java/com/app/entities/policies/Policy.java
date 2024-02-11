@@ -1,7 +1,5 @@
 package com.app.entities.policies;
 
-import java.sql.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,9 +11,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.app.entities.clients.Client;
+import com.app.entities.policyproviders.PolicyProvider;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -25,17 +26,28 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Policy {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(nullable = false)
 	private Integer policyId;
-	
+
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "insurance_type") 
+	@JoinColumn(name = "insurance_type")
 	private Insurances insuranceType;
-	
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "policy_provider")
+	private PolicyProvider policyProvider;
+
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private Client client;
+
+	public Policy(CarInsurance insurance, PolicyProvider policyProvider, Client clientId) {
+		this.insuranceType  = insurance;
+		this.policyProvider = policyProvider;
+		
+	}
 
 }

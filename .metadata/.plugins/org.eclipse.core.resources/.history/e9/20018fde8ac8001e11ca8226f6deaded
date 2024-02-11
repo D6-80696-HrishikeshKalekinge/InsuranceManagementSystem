@@ -1,0 +1,23 @@
+package com.app.controllers;
+
+
+@RestController
+@CrossOrigin(origins = "http://localhost:3000")
+@Validated
+public class CarController {
+
+	/*
+	 * http://localhost:3000/car-form
+		POST
+		Car Registration number 
+			type="text"
+			name="carRegNo"
+		Car Type
+			type="text"
+			name="carType"
+		Registration Date
+			type="date"
+			name="regDate
+	*
+	*/
+}

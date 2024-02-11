@@ -1,0 +1,24 @@
+package com.app.entities.DTO;
+
+import java.sql.Date;
+
+public class CarInsuranceDTO {
+private String carRegNo;
+	
+	private String carType;
+	
+	private Date regDate;
+}
+
+
+/*
+ * Car Registration number 
+		type="text"
+		name="carRegNo"
+	Car Type
+		type="text"
+		name="carType"
+	Registration Date
+		type="date"
+		name="regDate
+*/

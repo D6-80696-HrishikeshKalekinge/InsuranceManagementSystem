@@ -6,6 +6,8 @@ import com.app.entities.policies.Policy;
 
 public interface PolicyService {
 
-	List<Policy> getAllPoliciesOfUser(long clientId);
+	List<Policy> getAllPoliciesOfUser(int clientId);
+
+	List<Policy> getAllPolicy();
 
 }

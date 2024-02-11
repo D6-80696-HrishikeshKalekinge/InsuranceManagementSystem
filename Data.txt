@@ -35,6 +35,169 @@ INSERT INTO states_table (state_name) VALUES
 ('Lakshadweep'),
 ('Puducherry');
 
+-- Andhra Pradesh
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Hyderabad', 1),
+       ('Vijayawada', 1),
+       ('Visakhapatnam', 1);
+
+-- Arunachal Pradesh
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Itanagar', 2),
+       ('Naharlagun', 2);
+
+-- Assam
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Guwahati', 3),
+       ('Dibrugarh', 3);
+
+-- Bihar
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Patna', 4),
+       ('Gaya', 4);
+
+-- Chhattisgarh
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Raipur', 5),
+       ('Bilaspur', 5);
+
+-- Goa
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Panaji', 6),
+       ('Vasco da Gama', 6);
+
+-- Gujarat
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Ahmedabad', 7),
+       ('Surat', 7);
+
+-- Haryana
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Chandigarh', 8),
+       ('Faridabad', 8);
+
+-- Himachal Pradesh
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Shimla', 9),
+       ('Dharamshala', 9);
+
+-- Jharkhand
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Ranchi', 10),
+       ('Jamshedpur', 10);
+
+-- Karnataka
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Bangalore', 11),
+       ('Mysore', 11),
+       ('Mangalore', 11);
+
+-- Kerala
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Thiruvananthapuram', 12),
+       ('Kochi', 12),
+       ('Kozhikode', 12);
+
+-- Madhya Pradesh
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Bhopal', 13),
+       ('Indore', 13);
+
+-- Maharashtra
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Mumbai', 14),
+       ('Pune', 14),
+       ('Nagpur', 14);
+
+-- Manipur
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Imphal', 15);
+
+-- Meghalaya
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Shillong', 16);
+
+-- Mizoram
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Aizawl', 17);
+
+-- Nagaland
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Kohima', 18);
+
+-- Odisha
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Bhubaneswar', 19),
+       ('Cuttack', 19);
+
+-- Punjab
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Chandigarh', 20),
+       ('Ludhiana', 20);
+
+-- Rajasthan
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Jaipur', 21),
+       ('Jodhpur', 21);
+
+-- Sikkim
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Gangtok', 22);
+
+-- Tamil Nadu
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Chennai', 23),
+       ('Coimbatore', 23);
+
+-- Telangana
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Hyderabad', 24),
+       ('Warangal', 24);
+
+-- Tripura
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Agartala', 25);
+
+-- Uttar Pradesh
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Lucknow', 26),
+       ('Kanpur', 26);
+
+-- Uttarakhand
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Dehradun', 27),
+       ('Haridwar', 27);
+
+-- West Bengal
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Kolkata', 28),
+       ('Siliguri', 28);
+
+-- Andaman & Nicobar Islands
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Port Blair', 29);
+
+-- Chandigarh
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Chandigarh', 30);
+
+-- Dadra and Nagar Haveli
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Silvassa', 31);
+
+-- Delhi
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Delhi', 32);
+
+-- Lakshadweep
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Kavaratti', 33);
+
+-- Puducherry
+INSERT INTO city_table (city_name, state_state_id)
+VALUES ('Puducherry', 34);
+
+
 
 -- Add more cities as needed...
 INSERT INTO client_table (email, name, password, role, annual_income, dob, gender, marital_status, city_id, state_id) VALUES
@@ -43,4 +206,35 @@ INSERT INTO client_table (email, name, password, role, annual_income, dob, gende
 ('rajiv@example.com', 'Rajiv Singh', 'password123', 'CLIENT', 700000, '1988-08-25', 'Male', 'Single', 14, 7),           -- Ahmedabad, Gujarat
 ('anita@example.com', 'Anita Jain', 'password123', 'CLIENT', 800000, '1985-03-10', 'Female', 'Married', 24, 11),         -- Bengaluru, Karnataka
 ('vivek@example.com', 'Vivek Gupta', 'password123', 'CLIENT', 900000, '1982-11-30', 'Male', 'Single', 32, 14);          -- Mumbai, Maharashtra
+
+
+INSERT INTO insurance_table (period, premium, start_date)
+VALUES
+(12, 5000, '2023-01-01'),    -- Insurance type 1
+(24, 8000, '2023-02-15'),    -- Insurance type 2
+(36, 10000, '2023-03-20'),   -- Insurance type 3
+(6, 3000, '2023-04-01'),    -- Insurance type 4
+(18, 6000, '2023-05-15'),    -- Insurance type 5
+(24, 9000, '2023-06-20');
+
+-- Car insurance for clients 1, 2, and 3
+INSERT INTO car_insurance_table (car_no, car_type, registration_date, insurance_id)
+VALUES
+('ABC123', 'SUV', '2022-01-01', 1),  -- Client 1
+('DEF456', 'Sedan', '2022-02-01', 2), -- Client 2
+('GHI789', 'Hatchback', '2022-03-01', 3); -- Client 3
+
+-- Health insurance for clients 4 and 5
+INSERT INTO health_insurance_table (diseases, insurance_id)
+VALUES
+('Diabetes', 4),  -- Client 4
+('Hypertension', 5); -- Client 5
+
+INSERT INTO policy_table (client_id, insurance_type)
+VALUES
+(1, 1),    -- Client 1 has Policy 1 (Insurance type 1)
+(2, 4),    -- Client 2 has Policy 2 (Insurance type 2)
+(3, 3),    -- Client 3 has Policy 3 (Insurance type 3)
+(4, 6),    -- Client 4 has Policy 1 (Insurance type 1)
+(5, 2);    -- Client 5 has Policy 2 (Insurance type 2)
 

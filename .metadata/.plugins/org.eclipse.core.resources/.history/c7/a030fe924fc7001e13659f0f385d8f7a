@@ -1,6 +1,0 @@
-package com.app.entities.policies;
-
-@Entity
-public class Insurances {
-	
-}

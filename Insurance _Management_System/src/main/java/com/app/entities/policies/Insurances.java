@@ -1,18 +1,24 @@
 package com.app.entities.policies;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.app.entities.policyproviders.PolicyProvider;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,15 +37,13 @@ public class Insurances {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer insuranceId;
 	
-//	@ManyToOne(cascade = CascadeType.ALL, mappedBy = "insurances")
-//	private PolicyProvider policyprovider;
-	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "insuranceType")
-	private List<Policy> policies;
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "insurances",fetch = FetchType.EAGER)
+	private List<PolicyProvider> policyprovider = new ArrayList<>();
+	// many insurance can have many providers
 	
 	private Date startDate;
 	
 	private int premium;
 	
-	private int period = 12;
+	private int period = 12; // default
 }

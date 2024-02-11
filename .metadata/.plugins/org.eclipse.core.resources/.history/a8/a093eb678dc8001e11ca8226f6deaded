@@ -1,0 +1,5 @@
+package com.app.entities.DTO;
+
+public class CarInsuranceDTO {
+
+}

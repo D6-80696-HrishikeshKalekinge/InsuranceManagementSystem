@@ -18,7 +18,7 @@ import com.app.services.UserService;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-@RestController("/user")
+@RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @Validated
 public class UserController {
@@ -26,20 +26,40 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/")
+	// Testing purpose
+	@GetMapping("/user")
 	public ResponseEntity<?> getAllUser() {
 		return ResponseEntity.status(HttpStatus.OK).body(userService.getAllUser());
 	}
+	
+	/*
+	 * http://localhost:3000/login 
+		POST
+			email: "",
+ 			password: ""
+	 *
+	 */
 
 	@PostMapping("/login")
 	public ResponseEntity<?> loginUser(@Valid @RequestBody UserLoginDTO userLoginDTO) {
 		return ResponseEntity.status(HttpStatus.OK).body(userService.loginUser(userLoginDTO));
 	}
+	
+	/*
+	 * http://localhost:3000/register
+		POST
+			name: "",
+		    email: "",
+		    password: "",
+		    confirm_password: ""
+	 * 
+	 */
 
 	@PostMapping("/register")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody UserRegisterDTO userRegisterDTO) {
 		return ResponseEntity.status(HttpStatus.OK).body(userService.registerUser(userRegisterDTO));
 	}
+	
 	
 	
 	
