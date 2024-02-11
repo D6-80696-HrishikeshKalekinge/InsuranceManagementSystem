@@ -7,6 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.DTO.CarInsuranceDTO;
 import com.app.entities.policies.CarInsurance;
 import com.app.services.CarInsuranceService;
 
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 
-@RestController
+@RestController("/car-insurance")
 @CrossOrigin(origins = "http://localhost:3000")
 @Validated
 public class CarInsuranceController {
@@ -47,10 +48,10 @@ public class CarInsuranceController {
 	*/
 	
 	// send Client Id in param (token after implementation)
-	@PostMapping("car-form/{clientId}/clientId")
-	public ResponseEntity<?> buyCarInsurance(@RequestBody CarInsurance carInsurance, @RequestParam Integer clientId) {
+	@PostMapping
+	public ResponseEntity<?> buyCarInsurance(@RequestBody CarInsuranceDTO carInsurance) {
 		//TODO: process POST request
-		return ResponseEntity.status(HttpStatus.CREATED).body(carInsuranceService.buyCarInsurance(carInsurance, clientId));
+		return ResponseEntity.status(HttpStatus.CREATED).body(carInsuranceService.buyCarInsurance(carInsurance));
 	}
 	
 	
