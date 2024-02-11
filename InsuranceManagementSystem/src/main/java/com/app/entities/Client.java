@@ -20,6 +20,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.app.policies.CarInsurance;
+import com.app.policies.HealthInsurance;
+import com.app.policies.HomeInsurance;
+import com.app.policies.TravelInsurance;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -66,8 +69,20 @@ public class Client extends BaseEntity{
 	@Column(length = 20)
 	private String state;
 
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client", fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
 	private List<CarInsurance> carInsurances = new ArrayList<>(); // design pattern
+	// lazy init -> cascade must be done
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
+	private List<HealthInsurance> healthInsurances = new ArrayList<>(); // design pattern
+	// lazy init -> cascade must be done
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
+	private List<HomeInsurance> homeInsurances = new ArrayList<>(); // design pattern
+	// lazy init -> cascade must be done
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "client")
+	private List<TravelInsurance> travelInsurances = new ArrayList<>(); // design pattern
 	// lazy init -> cascade must be done
 	
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "clientId")
@@ -87,6 +102,33 @@ public class Client extends BaseEntity{
 	public void removeCar(CarInsurance car) {
 		carInsurances.remove(car);
 		car.setClient(null);
+	}
+	
+	public void addHealth(HealthInsurance health) {
+		healthInsurances.add(health);
+		health.setClient(this);
+	}
+	public void removeHealth(HealthInsurance health) {
+		healthInsurances.remove(health);
+		health.setClient(null);
+	}
+	
+	public void addHome(HomeInsurance home) {
+		homeInsurances.add(home);
+		home.setClient(this);
+	}
+	public void removeHome(HomeInsurance home) {
+		homeInsurances.remove(home);
+		home.setClient(null);
+	}
+	
+	public void addTravel(TravelInsurance travel) {
+		travelInsurances.add(travel);
+		travel.setClient(this);
+	}
+	public void removeHealth(TravelInsurance travel) {
+		travelInsurances.remove(travel);
+		travel.setClient(null);
 	}
 
 }

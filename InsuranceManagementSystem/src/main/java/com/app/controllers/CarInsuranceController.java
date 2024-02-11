@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 
-@RestController("/car-insurance")
+@RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @Validated
 public class CarInsuranceController {
@@ -36,7 +36,7 @@ public class CarInsuranceController {
 
 	
 	// send Client Id in param (token after implementation)
-	@PostMapping
+	@PostMapping("/carinsurance")
 	public ResponseEntity<?> buyCarInsurance(@RequestBody CarInsuranceDTO carInsurance) {
 		//TODO: process POST request
 		return ResponseEntity

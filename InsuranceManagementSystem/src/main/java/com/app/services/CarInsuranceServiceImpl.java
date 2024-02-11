@@ -32,6 +32,7 @@ public class CarInsuranceServiceImpl implements CarInsuranceService{
 		List<CarInsuranceDTO> cars = new ArrayList<>();
 		for(CarInsurance car : carInsuranceDao.findAll()) {
 			CarInsuranceDTO CDTO = mapper.map(car, CarInsuranceDTO.class);
+			car.getClient().getCarInsurances().size();
 			CDTO.setClientId(car.getClient().getId());
 			cars.add(CDTO);
 		}
