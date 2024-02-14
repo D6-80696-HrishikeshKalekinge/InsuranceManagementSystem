@@ -1,5 +1,0 @@
-package com.app.entities.DTO;
-
-public class UserLoginDTO {
-
-}

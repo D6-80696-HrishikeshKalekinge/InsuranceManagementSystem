@@ -1,9 +1,0 @@
-package com.app.entities.users;
-
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController("user")
-public class UserController {
-	
-	
-}
