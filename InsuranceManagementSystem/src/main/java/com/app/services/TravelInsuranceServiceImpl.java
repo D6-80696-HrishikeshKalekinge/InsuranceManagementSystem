@@ -48,16 +48,27 @@ public class TravelInsuranceServiceImpl implements TravelInsuranceService {
 	public boolean buyTravelInsurance(TravelInsuranceDTO travelInsurance) {
 		TravelInsurance travel = mapper.map(travelInsurance, TravelInsurance.class);
 		travel.setClient(clientDao.findById(travelInsurance.getClientId()).get());
+		// getting added to client list by cascade no need to add explicitly
 		travelInsuranceDao.save(travel);
 		return true;
 	}
 
 	@Override
-	public TravelInsuranceDTO getTravelInsurances(Integer clientId) {
-		if (clientDao.existsById(clientId))
-			return mapper.map(travelInsuranceDao.findByClientId(clientId), TravelInsuranceDTO.class);
-		else
-			return new TravelInsuranceDTO();
+	public List<TravelInsuranceDTO> getTravelInsurances(Integer clientId) {
+		List<TravelInsuranceDTO> insurancesDTO = new ArrayList<>();
+
+		if (clientDao.existsById(clientId)) {
+			// getting insurances from client
+			List<TravelInsurance> insurances = clientDao.findById(clientId).get().getTravelInsurances();
+			insurances.size(); // to get lazy data
+			for (TravelInsurance insurance : insurances) {
+				TravelInsuranceDTO DTO = mapper.map(insurance, TravelInsuranceDTO.class);
+//				DTO.setClientId(insurance.getClient().getId()); // WRITE_ONLY
+				insurancesDTO.add(DTO);
+			}
+		}
+
+		return insurancesDTO;
 	}
 
 }

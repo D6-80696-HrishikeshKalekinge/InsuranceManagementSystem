@@ -19,27 +19,27 @@ import com.app.policies.CarInsurance;
 
 @Service
 @Transactional
-public class CarInsuranceServiceImpl implements CarInsuranceService{
+public class CarInsuranceServiceImpl implements CarInsuranceService {
 
 	@Autowired
 	private CarInsuranceDao carInsuranceDao;
-	
+
 	@Autowired
 	private ClientDao clientDao;
-	
+
 	@Autowired
 	private ModelMapper mapper;
-	
+
 	@Override
-	public List<CarInsuranceDTO> getAllCarInsurances() {
+	public List<CarInsuranceDTO> getAllCarInsurances() { // all insurances of all users
 		List<CarInsuranceDTO> cars = new ArrayList<>();
-		for(CarInsurance car : carInsuranceDao.findAll()) {
+		for (CarInsurance car : carInsuranceDao.findAll()) {
 			CarInsuranceDTO CDTO = mapper.map(car, CarInsuranceDTO.class);
-			car.getClient().getCarInsurances().size();
-			CDTO.setClientId(car.getClient().getId());
+			car.getClient().getCarInsurances().size(); // fetching lazy data
+//			CDTO.setClientId(car.getClient().getId()); // WRITE_ONLY
 			cars.add(CDTO);
 		}
-		
+
 		return cars;
 	}
 
@@ -47,17 +47,27 @@ public class CarInsuranceServiceImpl implements CarInsuranceService{
 	public boolean buyCarInsurance(CarInsuranceDTO carInsurance) {
 		CarInsurance car = mapper.map(carInsurance, CarInsurance.class);
 		car.setClient(clientDao.findById(carInsurance.getClientId()).get());
+		// getting added to client list by cascade no need to add explicitly
 		carInsuranceDao.save(car);
 		return true;
 	}
 
 	@Override
-	public CarInsuranceDTO getCarInsurances(Integer clientId) {
-		if (clientDao.existsById(clientId))
-			return mapper.map(carInsuranceDao.findByClientId(clientId),
-					CarInsuranceDTO.class);
-		else
-			return new CarInsuranceDTO();
+	public List<CarInsuranceDTO> getCarInsurances(Integer clientId) {
+		List<CarInsuranceDTO> insurancesDTO = new ArrayList<>();
+
+		if (clientDao.existsById(clientId)) {
+			// getting insurances from client
+			List<CarInsurance> insurances = clientDao.findById(clientId).get().getCarInsurances();
+			insurances.size(); // to get lazy data
+			for (CarInsurance insurance : insurances) {
+				CarInsuranceDTO DTO = mapper.map(insurance, CarInsuranceDTO.class);
+//				DTO.setClientId(insurance.getClient().getId()); // WRITE_ONLY
+				insurancesDTO.add(DTO);
+			}
+		}
+
+		return insurancesDTO;
 	}
 
 }

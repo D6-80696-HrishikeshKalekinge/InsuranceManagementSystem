@@ -10,6 +10,6 @@ public interface TravelInsuranceService {
 
 	boolean buyTravelInsurance(TravelInsuranceDTO travelInsurance);
 
-	TravelInsuranceDTO getTravelInsurances(Integer clientId);
+	List<TravelInsuranceDTO> getTravelInsurances(Integer clientId);
 
 }

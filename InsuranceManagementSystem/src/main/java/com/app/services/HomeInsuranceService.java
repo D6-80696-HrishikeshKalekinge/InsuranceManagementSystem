@@ -11,6 +11,6 @@ public interface HomeInsuranceService {
 
 	boolean buyHomeInsurance(HomeInsuranceDTO homeInsurance);
 
-	HomeInsuranceDTO getHomeInsurances(Integer clientId);
+	List<HomeInsuranceDTO> getHomeInsurances(Integer clientId);
 
 }

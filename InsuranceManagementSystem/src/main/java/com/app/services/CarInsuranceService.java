@@ -11,7 +11,7 @@ public interface CarInsuranceService {
 
 	boolean buyCarInsurance(CarInsuranceDTO carInsurance);
 
-	CarInsuranceDTO getCarInsurances(Integer clientId);
+	List<CarInsuranceDTO> getCarInsurances(Integer clientId);
 
 
 }

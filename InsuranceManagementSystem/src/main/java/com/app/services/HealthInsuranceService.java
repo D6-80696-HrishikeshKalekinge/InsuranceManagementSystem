@@ -10,6 +10,6 @@ public interface HealthInsuranceService {
 
 	boolean buyHealthInsurance(HealthInsuranceDTO healthInsurance);
 
-	HealthInsuranceDTO getHealthInsurances(Integer clientId);
+	List<HealthInsuranceDTO> getHealthInsurances(Integer clientId);
 
 }

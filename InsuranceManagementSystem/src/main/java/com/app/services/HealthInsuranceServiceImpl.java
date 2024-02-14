@@ -48,15 +48,26 @@ public class HealthInsuranceServiceImpl implements HealthInsuranceService {
 	public boolean buyHealthInsurance(HealthInsuranceDTO healthInsurance) {
 		HealthInsurance health = mapper.map(healthInsurance, HealthInsurance.class);
 		health.setClient(clientDao.findById(healthInsurance.getClientId()).get());
+		// getting added to client list by cascade no need to add explicitly
 		healthInsuranceDao.save(health);
 		return true;
 	}
 
 	@Override
-	public HealthInsuranceDTO getHealthInsurances(Integer clientId) {
-		if (clientDao.existsById(clientId))
-			return mapper.map(healthInsuranceDao.findByClientId(clientId), HealthInsuranceDTO.class);
-		else
-			return new HealthInsuranceDTO();
+	public List<HealthInsuranceDTO> getHealthInsurances(Integer clientId) {
+		List<HealthInsuranceDTO> insurancesDTO = new ArrayList<>();
+
+		if (clientDao.existsById(clientId)) {
+			// getting insurances from client
+			List<HealthInsurance> insurances = clientDao.findById(clientId).get().getHealthInsurances();
+			insurances.size(); // to get lazy data
+			for (HealthInsurance insurance : insurances) {
+				HealthInsuranceDTO DTO = mapper.map(insurance, HealthInsuranceDTO.class);
+//				DTO.setClientId(insurance.getClient().getId()); // WRITE_ONLY
+				insurancesDTO.add(DTO);
+			}
+		}
+
+		return insurancesDTO;
 	}
 }

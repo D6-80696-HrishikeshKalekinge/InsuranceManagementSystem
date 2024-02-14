@@ -47,16 +47,27 @@ public class HomeInsuranceServiceImpl implements HomeInsuranceService {
 	public boolean buyHomeInsurance(HomeInsuranceDTO homeInsurance) {
 		HomeInsurance travel = mapper.map(homeInsurance, HomeInsurance.class);
 		travel.setClient(clientDao.findById(homeInsurance.getClientId()).get());
+		// getting added to client list by cascade no need to add explicitly
 		homeInsuranceDao.save(travel);
 		return true;
 	}
 
 	@Override
-	public HomeInsuranceDTO getHomeInsurances(Integer clientId) {
-		if (clientDao.existsById(clientId))
-			return mapper.map(homeInsuranceDao.findByClientId(clientId), HomeInsuranceDTO.class);
-		else
-			return new HomeInsuranceDTO();
+	public List<HomeInsuranceDTO> getHomeInsurances(Integer clientId) {
+		List<HomeInsuranceDTO> insurancesDTO = new ArrayList<>();
+
+		if (clientDao.existsById(clientId)) {
+			// getting insurances from client
+			List<HomeInsurance> insurances = clientDao.findById(clientId).get().getHomeInsurances();
+			insurances.size(); // to get lazy data
+			for (HomeInsurance insurance : insurances) {
+				HomeInsuranceDTO DTO = mapper.map(insurance, HomeInsuranceDTO.class);
+//				DTO.setClientId(insurance.getClient().getId()); // WRITE_ONLY
+				insurancesDTO.add(DTO);
+			}
+		}
+
+		return insurancesDTO;
 	}
 
 }
