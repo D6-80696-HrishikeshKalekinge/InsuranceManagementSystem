@@ -63,6 +63,7 @@ public class CarInsuranceServiceImpl implements CarInsuranceService {
 			for (CarInsurance insurance : insurances) {
 				CarInsuranceDTO DTO = mapper.map(insurance, CarInsuranceDTO.class);
 //				DTO.setClientId(insurance.getClient().getId()); // WRITE_ONLY
+				DTO.setPID(clientId, insurance);
 				insurancesDTO.add(DTO);
 			}
 		}

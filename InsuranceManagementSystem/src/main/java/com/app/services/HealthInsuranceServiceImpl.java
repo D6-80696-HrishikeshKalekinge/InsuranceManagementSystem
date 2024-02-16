@@ -47,6 +47,7 @@ public class HealthInsuranceServiceImpl implements HealthInsuranceService {
 	@Override
 	public boolean buyHealthInsurance(HealthInsuranceDTO healthInsurance) {
 		HealthInsurance health = mapper.map(healthInsurance, HealthInsurance.class);
+		health.setDiseases(List.of(healthInsurance.getDiseases().split(",")));
 		health.setClient(clientDao.findById(healthInsurance.getClientId()).get());
 		// getting added to client list by cascade no need to add explicitly
 		healthInsuranceDao.save(health);
@@ -64,6 +65,7 @@ public class HealthInsuranceServiceImpl implements HealthInsuranceService {
 			for (HealthInsurance insurance : insurances) {
 				HealthInsuranceDTO DTO = mapper.map(insurance, HealthInsuranceDTO.class);
 //				DTO.setClientId(insurance.getClient().getId()); // WRITE_ONLY
+				DTO.setPID(clientId, insurance);
 				insurancesDTO.add(DTO);
 			}
 		}

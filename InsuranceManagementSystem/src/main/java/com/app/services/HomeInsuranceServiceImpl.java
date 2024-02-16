@@ -63,6 +63,7 @@ public class HomeInsuranceServiceImpl implements HomeInsuranceService {
 			for (HomeInsurance insurance : insurances) {
 				HomeInsuranceDTO DTO = mapper.map(insurance, HomeInsuranceDTO.class);
 //				DTO.setClientId(insurance.getClient().getId()); // WRITE_ONLY
+				DTO.setPID(clientId, insurance);
 				insurancesDTO.add(DTO);
 			}
 		}

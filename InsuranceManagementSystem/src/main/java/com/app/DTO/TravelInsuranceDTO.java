@@ -11,6 +11,8 @@ import javax.validation.constraints.NotNull;
 
 import com.app.entities.Client;
 import com.app.entities.Gender;
+import com.app.policies.HomeInsurance;
+import com.app.policies.TravelInsurance;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -29,6 +31,8 @@ import lombok.ToString;
 @Getter
 @ToString
 public class TravelInsuranceDTO {
+	private String PID;
+	
 	private Date startDate;
 	
 	private Integer premium;
@@ -53,4 +57,8 @@ public class TravelInsuranceDTO {
 	private Integer duration;
 	
 	private Integer noOfTravlers;
+	
+	public void setPID(Integer clientId, TravelInsurance insurance) {
+		this.PID = "TR" + this.startDate.getTime() + clientId + insurance.getId();
+	}
 }

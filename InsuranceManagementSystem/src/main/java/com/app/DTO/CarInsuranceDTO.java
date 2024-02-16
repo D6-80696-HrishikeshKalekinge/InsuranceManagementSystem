@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import com.app.entities.Client;
+import com.app.policies.CarInsurance;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -18,6 +19,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import net.bytebuddy.asm.Advice.This;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,6 +27,8 @@ import lombok.ToString;
 @Getter
 @ToString
 public class CarInsuranceDTO {
+	private String PID;
+	
 	private Date startDate;
 	
 	private Integer premium;
@@ -49,4 +53,9 @@ public class CarInsuranceDTO {
 	private String carType;
 	
 	private Date regDate;
+	
+	
+	public void setPID(Integer clientId, CarInsurance insurance) {
+		this.PID = "CR" + this.startDate.getTime() + clientId + insurance.getId();
+	}
 }

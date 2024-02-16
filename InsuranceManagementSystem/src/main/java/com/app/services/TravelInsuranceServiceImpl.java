@@ -64,6 +64,7 @@ public class TravelInsuranceServiceImpl implements TravelInsuranceService {
 			for (TravelInsurance insurance : insurances) {
 				TravelInsuranceDTO DTO = mapper.map(insurance, TravelInsuranceDTO.class);
 //				DTO.setClientId(insurance.getClient().getId()); // WRITE_ONLY
+				DTO.setPID(clientId, insurance);
 				insurancesDTO.add(DTO);
 			}
 		}
