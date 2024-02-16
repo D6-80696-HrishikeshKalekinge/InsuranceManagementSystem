@@ -46,10 +46,10 @@ public class HealthInsuranceDTO {
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private Integer clientId;
 
-	private String City;
-
-	private Integer valueOfHome;
-
-	private Integer valueOfHouseHoldItems;
+	private String diseases; 
+	
+	private Integer age;
+	
+	private String gender;
 
 }

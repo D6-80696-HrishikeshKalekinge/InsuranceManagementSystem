@@ -14,9 +14,9 @@ import lombok.Setter;
 @Component
 public class LoginResponseDTO {
 
-	private boolean loginSuccess;
+	private Boolean loginSuccess;
 	
 	private String token;
 	
-	private int clientId;
+	private Integer clientId;
 }
